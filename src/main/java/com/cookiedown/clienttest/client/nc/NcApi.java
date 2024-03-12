@@ -7,4 +7,6 @@ import java.util.List;
 public interface NcApi {
 
     List<WorldInfoResponse> getInfo();
+    ContentsResponse getItemInfo();
+
 }

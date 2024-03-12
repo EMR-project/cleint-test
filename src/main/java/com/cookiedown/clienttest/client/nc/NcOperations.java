@@ -25,4 +25,13 @@ public class NcOperations implements NcApi {
                 .collectList()
                 .block();
     }
+
+    @Override
+    public ContentsResponse getItemInfo() {
+        return this.client.get()
+                .uri(NcUri.GET_ITEMSEARCHINFO)
+                .retrieve()
+                .bodyToMono(ContentsResponse.class)
+                .block();
+    }
 }
