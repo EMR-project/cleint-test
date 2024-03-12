@@ -1,14 +1,13 @@
 package com.cookiedown.clienttest.client.nc;
 
-import com.cookiedown.clienttest.client.auth.AuthUri;
-import com.cookiedown.clienttest.config.WebClientProperties;
 import com.cookiedown.clienttest.dto.*;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 
+@Slf4j
 public class NcOperations implements NcApi {
 
     private final WebClient client;
