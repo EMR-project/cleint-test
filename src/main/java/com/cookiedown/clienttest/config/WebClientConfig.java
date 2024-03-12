@@ -1,7 +1,9 @@
 package com.cookiedown.clienttest.config;
 
-import com.cookiedown.clienttest.client.AuthApi;
-import com.cookiedown.clienttest.client.AuthOperations;
+import com.cookiedown.clienttest.client.auth.AuthApi;
+import com.cookiedown.clienttest.client.auth.AuthOperations;
+import com.cookiedown.clienttest.client.nc.NcApi;
+import com.cookiedown.clienttest.client.nc.NcOperations;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +25,11 @@ public class WebClientConfig {
         return new AuthOperations(authClient);
     }
 
+    @Bean
+    public NcApi ncApi(@Qualifier("ncClient") WebClient ncClient) {
+        return new NcOperations(ncClient);
+    }
+
     @Bean(name = "authClient")
     public WebClient authClient() {
         return WebClient.create(properties.getAuth().getBaseUri());
@@ -33,4 +40,8 @@ public class WebClientConfig {
         return WebClient.create(properties.getFile().getBaseUri());
     }
 
+    @Bean(name = "ncClient")
+    public WebClient ncClient() {
+        return WebClient.builder().baseUrl(properties.getNc().getBaseUri()).defaultHeader("Authorization", "Bearer " + properties.getNc().getApiKey()).build();
+    }
 }

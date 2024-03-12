@@ -1,4 +1,4 @@
-package com.cookiedown.clienttest.client;
+package com.cookiedown.clienttest.client.auth;
 
 public class AuthUri {
 

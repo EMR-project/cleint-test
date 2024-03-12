@@ -1,6 +1,6 @@
 package com.cookiedown.clienttest.controller;
 
-import com.cookiedown.clienttest.client.AuthApi;
+import com.cookiedown.clienttest.client.auth.AuthApi;
 import com.cookiedown.clienttest.dto.LoginRequest;
 import com.cookiedown.clienttest.dto.LoginResponse;
 import org.springframework.web.bind.annotation.PostMapping;

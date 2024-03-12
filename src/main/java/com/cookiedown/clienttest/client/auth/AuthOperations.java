@@ -1,6 +1,5 @@
-package com.cookiedown.clienttest.client;
+package com.cookiedown.clienttest.client.auth;
 
-import com.cookiedown.clienttest.config.WebClientProperties;
 import com.cookiedown.clienttest.dto.JoinRequest;
 import com.cookiedown.clienttest.dto.JoinResponse;
 import com.cookiedown.clienttest.dto.LoginRequest;
