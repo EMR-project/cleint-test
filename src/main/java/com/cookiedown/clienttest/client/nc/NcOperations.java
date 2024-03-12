@@ -27,9 +27,13 @@ public class NcOperations implements NcApi {
     }
 
     @Override
-    public ContentsResponse getItemInfo() {
+    public ContentsResponse getItemInfo(String keyword) {
         return this.client.get()
-                .uri(NcUri.GET_ITEMSEARCHINFO)
+                .uri((builder) ->
+                        builder.path(NcUri.GET_ITEMSEARCHINFO)
+                                .queryParam("search_keyword", keyword)
+                                .build()
+                )
                 .retrieve()
                 .bodyToMono(ContentsResponse.class)
                 .block();

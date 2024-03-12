@@ -26,8 +26,8 @@ public class NcController {
     }
 
     @GetMapping("/item-search-info")
-    public ContentsResponse getItemSearchInfo() {
-        return this.ncApi.getItemInfo();
+    public ContentsResponse getItemSearchInfo(@RequestParam(required = false) String keyword) {
+        return this.ncApi.getItemInfo(keyword);
     }
 
 }

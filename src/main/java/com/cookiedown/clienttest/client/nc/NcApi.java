@@ -7,6 +7,6 @@ import java.util.List;
 public interface NcApi {
 
     List<WorldInfoResponse> getInfo();
-    ContentsResponse getItemInfo();
+    ContentsResponse getItemInfo(String keyword);
 
 }
